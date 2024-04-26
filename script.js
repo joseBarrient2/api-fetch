@@ -20,6 +20,7 @@ function obtenerUsruarios(e){
     .catch((error)=>{
         //console.log(error);
         printError(error);
+       
     })
 }
 
@@ -37,12 +38,13 @@ function imprimeDatos(datos){
         <article class="item">${datos[info].company.name}</article>
         `;
     }
+    boxData.style.visibility = 'visible';
     btnShow.disabled = true; 
     loader.classList.remove('show');
 }
 
-function printError(err){
+function printError(error){
     //boxError.innerHTML = err;
     loader.classList.remove('show');
-    console.log(err);
+    console.log('herror : '+ error.message);
 }
